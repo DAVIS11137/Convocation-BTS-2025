@@ -1,0 +1,81 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(
+        135deg,
+        #ff006e,
+        #8338ec,
+        #3a86ff,
+        #06d6a0
+    );
+    background-size:400% 400%;
+    animation:bgMove 8s infinite ease;
+}
+
+.container{
+    text-align:center;
+}
+
+#message{
+    color:white;
+    font-size:6rem;
+    font-weight:bold;
+    text-shadow:
+        0 0 10px white,
+        0 0 20px cyan,
+        0 0 40px cyan;
+    animation:zoom 2s infinite;
+}
+
+@keyframes zoom{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.2);
+    }
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Confettis */
+
+.confetti{
+    position:absolute;
+    top:-20px;
+    width:15px;
+    height:15px;
+    animation:fall 5s linear infinite;
+}
+
+.confetti:nth-child(2){left:10%; background:red;}
+.confetti:nth-child(3){left:20%; background:yellow;}
+.confetti:nth-child(4){left:35%; background:lime;}
+.confetti:nth-child(5){left:50%; background:cyan;}
+.confetti:nth-child(6){left:65%; background:orange;}
+.confetti:nth-child(7){left:80%; background:pink;}
+.confetti:nth-child(8){left:90%; background:white;}
+.confetti:nth-child(9){left:75%; background:purple;}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-100px) rotate(0deg);
+    }
+    100%{
+        transform:translateY(110vh) rotate(720deg);
+    }
+}
